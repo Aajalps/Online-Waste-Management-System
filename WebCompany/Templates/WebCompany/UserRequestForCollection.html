@@ -1,0 +1,44 @@
+{% extends 'WebCompany/Header.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserRequestForCollection</title>
+</head>
+<body>
+    
+
+<table border="1" align="center" cellpadding="10">
+    <tr>
+        <th>Sl.No</th>
+        <th>ForDate</th>
+        <th>Request</th>
+        <th>PostDate</th>
+        <th>User</th>
+        <th>Contact</th>
+        <th>HouseNo</th>
+        
+     
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.request_date}}</td>
+        <td>{{i.request_message}}</td>
+        <td>{{i.request_postdate}}</td>
+        <td>{{i.user.user_name}}</td>
+        <td>{{i.user.user_contact}}</td>
+        <td>{{i.user.user_houseno}}</td>
+        
+     
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+{% endblock content %}

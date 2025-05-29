@@ -1,0 +1,79 @@
+{% extends 'WebCompany/Header.html' %}
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollectionScheduleDatesEntry</title>
+</head>
+<body>
+    
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table align="center">
+            
+               
+            <tr>
+                <td>VechicleList</td>
+                <td>
+                    <select name="sel_vechicle" id="sel_vechicle">
+                        <option value="">...Select...</option>
+                        {% for i in vdata %}
+                        <option value="{{i.id}}">{{i.vehicle_name}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>DriverList</td>
+                <td>
+                    <select name="sel_driver" id="sel_driver">
+                        <option value="">...Select...</option>
+                        {% for i in ddata %}
+                        <option value="{{i.id}}">{{i.driver_name}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Ward</td>
+                <td>
+                    <select name="sel_ward" id="sel_ward">
+                        <option value="">...Select...</option>
+                        {% for i in wdata %}
+                        <option value="{{i.id}}">{{i.ward_name}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Date</td>
+                <td><input type="date" name="txtdate"  required ></td>
+            </tr>
+           
+            <tr>
+                <td>Time</td>
+                <td><input type="time" name="txttime" required ></td>
+            </tr>
+
+            <tr>
+                
+                <td colspan="2" align="center">
+                    <input type="submit" name="btnsubmit" value="Save">
+                    <input type="reset" name="btncancel" value="Cancel">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    
+
+</body>
+</html>
+
+
+{% endblock content %}

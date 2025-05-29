@@ -1,0 +1,324 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EARTHCARE</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><a href="{%  url 'WebAdmin:District'  %}">District</a</td>
+        </tr>
+        <tr>
+            <td><a href="{%  url 'WebAdmin:placeInsertSelect'  %}">Place</a</td>
+        </tr>
+       
+        <tr>
+            <td><a href="{%  url 'WebAdmin:Ward'  %}">Ward</a</td>
+        </tr>
+  
+
+
+        <tr>
+            <td><a href="{%  url 'WebAdmin:userListNew'  %}">userListNew</a</td>
+        </tr>
+        <tr>
+            <td><a href="{%  url 'WebAdmin:userListAccepted'  %}">userListAccepted</a</td>
+        </tr>
+        <tr>
+            <td><a href="{%  url 'WebAdmin:userListRejected'  %}">userListRejected</a</td>
+        </tr>
+
+
+        
+        <tr>
+            <td><a href="{%  url 'WebAdmin:companyListNew'  %}">companyListNew</a</td>
+        </tr>
+        <tr>
+            <td><a href="{%  url 'WebAdmin:companyListAccepted'  %}">companyListAccepted</a</td>
+        </tr>
+        <tr>
+            <td><a href="{%  url 'WebAdmin:companyListRejected'  %}">companyListRejected</a</td>
+        </tr>
+
+
+        
+        <tr>
+            <td><a href="{%  url 'WebAdmin:ComplaintListNew'  %}">ComplaintListNew</a</td>
+        </tr>
+        <tr>
+            <td><a href="{%  url 'WebAdmin:ComplaintSolved'  %}">ComplaintSolved</a</td>
+        </tr>
+
+        <tr>
+            <td><a href="{%  url 'WebAdmin:UserFeedbackNew'  %}">UserFeedbackNew</a</td>
+        </tr>
+        
+        <tr>
+            <td><a href="{%  url 'WebAdmin:adminInsertSelect'  %}">AdminReg</a</td>
+        </tr>
+        
+
+        <tr>
+            <td><a href="{%  url 'WebAdmin:WasteCategory'  %}">WasteCategory</a</td>
+        </tr>
+        
+        <tr>
+            <td><a href="{%  url 'WebAdmin:WasteRate'  %}">WasteRate</a</td>
+        </tr>
+        
+    </table>
+</body>
+</html> -->
+
+
+
+
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>EARTHCARE</title>
+    <link rel="shortcut icon" type="image/png" href="{% static 'Admin/assets/images/logos/favicon.png' %}" />
+    <link rel="stylesheet" href="{% static 'Admin/assets/css/styles.min.css' %}" />
+</head>
+
+<body>
+    <!--  Body Wrapper -->
+    <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
+        data-sidebar-position="fixed" data-header-position="fixed">
+        <!-- Sidebar Start -->
+        <aside class="left-sidebar">
+            <!-- Sidebar scroll-->
+            <div>
+                <div class="brand-logo d-flex align-items-center justify-content-between">
+                    <div class="text-nowrap logo-img" style="font-size: 20px;">
+                       EARTHCARE
+                    </div>
+                    <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
+                        <i class="ti ti-x fs-8"></i>
+                    </div>
+                </div>
+                <!-- Sidebar navigation-->
+                <nav class="sidebar-nav scroll-sidebar" data-simplebar="">
+                    <ul id="sidebarnav">
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">Home</span>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{%  url 'WebAdmin:LoadingHomePage'  %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-layout-dashboard"></i>
+                                </span>
+                                <span class="hide-menu">Dashboard</span>
+                            </a>
+                        </li>
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">Basic Datas</span>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{%  url 'WebAdmin:District'  %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-article"></i>
+                                </span>
+                                <span class="hide-menu">District</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{%  url 'WebAdmin:placeInsertSelect'  %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-alert-circle"></i>
+                                </span>
+                                <span class="hide-menu">Place</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{%  url 'WebAdmin:Ward'  %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-alert-circle"></i>
+                                </span>
+                                <span class="hide-menu">Ward</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{%  url 'WebAdmin:WasteCategory'  %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-cards"></i>
+                                </span>
+                                <span class="hide-menu">Category</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{%  url 'WebAdmin:WasteRate'  %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-file-description"></i>
+                                </span>
+                                <span class="hide-menu">Rate</span>
+                            </a>
+                        </li>
+                       
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">Verification</span>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{%  url 'WebAdmin:userListNew'  %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-login"></i>
+                                </span>
+                                <span class="hide-menu">User List</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{%  url 'WebAdmin:userListAccepted'  %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-user-plus"></i>
+                                </span>
+                                <span class="hide-menu">User Accepted</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{%  url 'WebAdmin:userListRejected'  %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-user-plus"></i>
+                                </span>
+                                <span class="hide-menu">User Rejected</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{%  url 'WebAdmin:companyListNew'  %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-user-plus"></i>
+                                </span>
+                                <span class="hide-menu">Company List</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{%  url 'WebAdmin:companyListAccepted'  %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-user-plus"></i>
+                                </span>
+                                <span class="hide-menu">Company Accepted</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{%  url 'WebAdmin:companyListRejected'  %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-user-plus"></i>
+                                </span>
+                                <span class="hide-menu">Company Rejected</span>
+                            </a>
+                        </li>
+                      
+                        <li class="nav-small-cap">
+                            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+                            <span class="hide-menu">Others</span>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{%  url 'WebAdmin:ComplaintListNew'  %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-mood-happy"></i>
+                                </span>
+                                <span class="hide-menu">Complaints</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{%  url 'WebAdmin:ComplaintSolved'  %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-aperture"></i>
+                                </span>
+                                <span class="hide-menu">Complaint Solved</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link" href="{%  url 'WebAdmin:UserFeedbackNew'  %}" aria-expanded="false">
+                                <span>
+                                    <i class="ti ti-aperture"></i>
+                                </span>
+                                <span class="hide-menu">Feedback</span>
+                            </a>
+                        </li>
+                    </ul>
+                  
+                </nav>
+                <!-- End Sidebar navigation -->
+            </div>
+            <!-- End Sidebar scroll-->
+        </aside>
+        <!--  Sidebar End -->
+        <!--  Main wrapper -->
+        <div class="body-wrapper">
+            <!--  Header Start -->
+            <header class="app-header">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <ul class="navbar-nav">
+                        <li class="nav-item d-block d-xl-none">
+                            <a class="nav-link sidebartoggler nav-icon-hover" id="headerCollapse"
+                                href="javascript:void(0)">
+                                <i class="ti ti-menu-2"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                           
+                        </li>
+                    </ul>
+                    <div class="navbar-collapse justify-content-end px-0" id="navbarNav">
+                        <ul class="navbar-nav flex-row ms-auto align-items-center justify-content-end">
+                          
+                            <li class="nav-item dropdown">
+                                <a class="nav-link nav-icon-hover" href="javascript:void(0)" id="drop2"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="{% static 'Admin/assets/images/profile/user-1.jpg' %}" alt="" width="35"
+                                        height="35" class="rounded-circle">
+                                </a>
+                                <div class="dropdown-menu dropdown-menu-end dropdown-menu-animate-up"
+                                aria-labelledby="drop2">
+                                <div class="message-body">
+                                    <!-- <a href="javascript:void(0)"
+                                        class="d-flex align-items-center gap-2 dropdown-item">
+                                        <i class="ti ti-user fs-6"></i>
+                                        <p class="mb-0 fs-3">My Profile</p>
+                                    </a>
+                                    <a href="javascript:void(0)"
+                                        class="d-flex align-items-center gap-2 dropdown-item">
+                                        <i class="ti ti-mail fs-6"></i>
+                                        <p class="mb-0 fs-3">My Account</p>
+                                    </a>
+                                    <a href="javascript:void(0)"
+                                        class="d-flex align-items-center gap-2 dropdown-item">
+                                        <i class="ti ti-list-check fs-6"></i>
+                                        <p class="mb-0 fs-3">My Task</p>
+                                    </a> -->
+                                    <a href="{%  url 'WebGuest:Login'  %}"
+                                        class="btn btn-outline-primary mx-3 mt-2 d-block">Logout</a>
+                                </div>
+                            </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <!--  Header End -->
+            <div class="container-fluid" style="background-image: url('https://cdn.britannica.com/02/141102-050-82CB8A59/Bulldozers-landfill.jpg'); height: 700px; object-fit: cover;">
+                
+               
+            </div>
+        </div>
+    </div>
+    <script src="{% static 'Admin/assets/libs/jquery/dist/jquery.min.js' %}"></script>
+    <script src="{% static 'Admin/assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'Admin/assets/js/sidebarmenu.js' %}"></script>
+    <script src="{% static 'Admin/assets/js/app.min.js' %}"></script>
+    <script src="{% static 'Admin/assets/libs/apexcharts/dist/apexcharts.min.js' %}"></script>
+    <script src="{% static 'Admin/assets/libs/simplebar/dist/simplebar.js' %}"></script>
+    <script src="{% static 'Admin/assets/js/dashboard.js' %}"></script>
+</body>
+
+</html>

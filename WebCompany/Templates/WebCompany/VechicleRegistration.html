@@ -1,0 +1,72 @@
+{% extends 'WebCompany/Header.html' %}
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DriverRegistration</title>
+</head>
+<body>
+    
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table align="center">
+           
+        
+            
+            <tr>
+                <td>VechicleName</td>
+                <td><input type="text" name="txtname" placeholder="Enter Name" required ></td>
+            </tr>
+           
+            <tr>
+                <td>Reg.Number</td>
+                <td><input type="text" name="txtregno" placeholder="Enter RegNumber" required ></td>
+            </tr>
+           
+            <tr>
+                <td>Photo</td>
+                <td><input type="file" name="fileImage"  required ></td>
+            </tr>
+         
+            <tr>
+                
+                <td colspan="2" align="center">
+                    <input type="submit" name="btnsubmit" value="Save">
+                    <input type="reset" name="btncancel" value="Cancel">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    
+
+</body>
+</html>
+
+<table border="1" align="center" cellpadding="10">
+    <tr>
+        <th>Sl.No</th>
+        <th>VechicleName</th>
+        <th>RegisterNumber</th>
+        <th>Photo</th>
+        <th>Action</th>
+    </tr>
+    {% for i in data %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.vehicle_name}}</td>
+        <td>{{i.vehicle_number}}</td>
+        <td><img src="{{i.vehicle_photo.url}}" width="50" height="50" alt=""></td>
+        <td><a href="{% url 'WebCompany:delVechicle' i.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+
+{% endblock content %}

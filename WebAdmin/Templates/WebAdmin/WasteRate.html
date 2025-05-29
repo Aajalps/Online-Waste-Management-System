@@ -1,0 +1,66 @@
+{% extends 'WebAdmin/Header.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Place</title>
+</head>
+<body>
+    
+    <form method="POST">
+        {% csrf_token %}
+        <table align="center">
+            <tr>
+                <td>WasteCategory</td>
+                <td>
+                    <select name="sel_district" id="sel_district">
+                        <option value="">...Select...</option>
+                        {% for i in categroy %}
+                        <option 
+                       
+                        value="{{i.id}}">{{i.category_name}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Rate</td>
+                <td><input type="text" name="txtname" placeholder="Enter Rate" required value="{{editdata.wasterate_amount}}"></td>
+            </tr>
+            <tr>
+                
+                <td colspan="2" align="center">
+                    <input type="submit" name="btnsubmit" value="Save">
+                    <input type="reset" name="btncancel" value="Cancel">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <table border="1" align="center" cellpadding="10">
+        <tr>
+            <th>Sl.No</th>
+            <th>Category</th>
+            <th>Rate</th>
+            <th>Action</th>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.category.category_name}}</td>
+            <td>{{i.wasterate_amount}}</td>
+            <td><a href="{% url 'WebAdmin:delWasteRate' i.id %}">Delete</a></td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>
+
+
+{% endblock content %}

@@ -1,0 +1,54 @@
+{% extends 'WebAdmin/Header.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WasteCategory</title>
+
+   
+
+    </head>
+
+
+    <body>
+    
+
+    <form name="frmDistrict" method="POST">
+        {% csrf_token %}
+    <table align="center">
+        <tr>
+            <td>WasteCategory</td>
+            <td><input type="text" name="txt_district" placeholder="Enter WasteCategory" value="{{disdata.category_name}}"></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" name="btn_save" id="btn_save" value="Save">
+            <input type="reset" name="btn_cancel" id="btn_cancel" value="Cancel"></td>
+            </tr>
+    </table>
+</form>
+    
+</body>
+</html>
+    
+    <table width="200" border="1" align="center">
+        <tr>
+            <td>Sl.no</td>
+            <td>WasteCategory</td>
+            <td>Action</td>
+        </tr>
+        {%  for i in District %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.category_name}}</td>
+            <td><a href="{%  url 'WebAdmin:DeleteWasteCategory' i.id %}">Delete</a></td>
+            <td><a href="{%  url 'WebAdmin:UpdateWasteCategory' i.id %}">Edit</a></td>
+        </tr>
+        {% endfor %}
+        </table>
+   
+{% endblock content %}

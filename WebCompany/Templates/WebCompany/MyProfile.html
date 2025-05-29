@@ -1,0 +1,53 @@
+{% extends 'WebCompany/Header.html' %}
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile</title>
+</head>
+<body>
+    <a href="{% url 'WebCompany:homepage' %}">Home</a>
+    <div class="container-fluid d-bg-image">
+        <div class="d-profile">
+            <table align="center" style="color: black;" cellpadding="10px" class="d-card">
+                <tr>
+                    <td colspan="2" align="center"><img src="{{data.company_photo.url}}" alt="" width="150" height="150"></td>
+                </tr>
+                <tr>
+                    <td>Name</td>
+                    <td>{{data.company_name}}</td>
+                </tr>
+                <tr>
+                    <td>Contact</td>
+                    <td>{{data.company_contact}}</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>{{data.company_email}}</td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center"><a class="d-card-button" href="{% url 'WebCompany:editprofile' %}">Edit Profile</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <a class="d-card-button" href="{% url 'WebCompany:changepassword' %}">Change password</a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        
+
+    </div>
+</body>
+
+</html>
+
+{% endblock content %}

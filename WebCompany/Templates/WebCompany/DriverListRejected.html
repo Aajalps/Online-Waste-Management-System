@@ -1,0 +1,51 @@
+{% extends 'WebCompany/Header.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <table border="1" align="center" cellpadding="10">
+        <tr>
+            <th>Sl.No</th>
+            <th>Name</th>
+            <th>Contact</th>
+            
+            <th>Email</th>
+            <th>Photo</th>
+            <th>Proof</th>
+          
+            <th>Place</th>
+            <th>District</th>
+            <th>Action</th>
+        </tr>
+        {% for i in userdata %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.driver_name}}</td>
+            <td>{{i.driver_contact}}</td>
+            
+            <td>{{i.driver_email}}</td>
+            <td><img src="{{i.driver_photo.url}}" width="50" height="50" alt=""></td>
+            <td><img src="{{i.driver_proof.url}}" width="50" height="50" alt=""></td>
+          
+            <td>{{i.place.place_name}}</td>
+            <td>{{i.place.district.district_name}}</td>
+            <td>
+                <a href="{% url 'WebCompany:acceptdriver' i.id %}">Accept</a>
+              
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>
+
+
+{% endblock content %}

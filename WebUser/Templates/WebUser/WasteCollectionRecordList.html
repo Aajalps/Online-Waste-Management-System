@@ -1,0 +1,52 @@
+{% extends 'WebUser/Header.html' %}
+{% load static %}
+{% block content %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" align="center" cellpadding="10">
+        <tr>
+            <th>Sl.No</th>
+            <th>Ward</th>
+            <th>User</th>
+            <th>HouseNo</th>
+            <th>Contact</th>
+            
+            <th>CollectionDate</th>
+            <th>Qty</th>
+            <th>WasteCategory</th>
+            <th>CollectedBy</th>
+          
+           
+           
+        </tr>
+        {% for i in userdata %}
+        <tr>
+            <td>{{forloop.counter}}</td>
+            <td>{{i.user.ward.ward_name}}</td>
+            <td>{{i.user.user_name}}</td>
+            <td>{{i.user.user_houseno}}</td>
+            <td>{{i.user.user_contact}}</td>
+            <td>{{i.collection_date}}</td>
+            <td>{{i.collection_qty}}</td>
+            <td>{{i.category.category_name}}</td>
+            <td>{{i.driver.driver_name}}</td>
+           
+        
+           
+        </tr>
+        {% endfor %}
+
+    </table>
+</body>
+</html>
+
+
+{% endblock content %}

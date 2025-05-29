@@ -1,0 +1,94 @@
+{% extends 'WebDriver/Header.html' %}
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CollectionScheduleDatesEntry</title>
+</head>
+<body>
+    
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table align="center">
+            
+               
+            <tr>
+                <td>Ward</td>
+                <td>
+                    <select name="sel_ward" id="sel_ward">
+                        <option value="">...Select...</option>
+                        {% for i in ward %}
+                        <option value="{{i.id}}">{{i.ward_name}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>HouseNumber</td>
+                <td>
+                    <select name="sel_user" id="sel_user">
+                        <option value="">...Select...</option>
+                    </select>
+                </td>
+            </tr>
+            
+
+            <tr>
+                <td>WasteCategory</td>
+                <td>
+                    <select name="sel_category" id="sel_category">
+                        <option value="">...Select...</option>
+                        {% for i in category %}
+                        <option value="{{i.id}}">{{i.category_name}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td>Date</td>
+                <td><input type="date" name="txtdate"  required ></td>
+            </tr>
+           
+            <tr>
+                <td>Quantity</td>
+                <td><input type="text" name="txtqty" required ></td>
+            </tr>
+
+            <tr>
+                
+                <td colspan="2" align="center">
+                    <input type="submit" name="btnsubmit" value="Save">
+                    <input type="reset" name="btncancel" value="Cancel">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    
+
+</body>
+</html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $("#sel_ward").change(function () {
+        var did = $(this).val();
+        var ur = "{% url 'WebDriver:ajaxuser' %}"
+        $.ajax({
+            url: ur,
+            data: { did: did, },
+            success: function (data) {
+                $("#sel_user").html(data);
+            },
+        });
+    });
+</script>
+
+
+{% endblock content %}
